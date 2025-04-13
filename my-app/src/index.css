@@ -1,0 +1,126 @@
+:root {
+  --section-padding: 10vmin;
+  --circle-diameter: 70vmin;
+  --circle-element-diameter: 30vmin;
+  --circle-element-max-diameter: 200px;
+  --social-media-icon-size: 30px
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+section {
+  min-height: 100vh;
+  margin: 0;
+  padding: calc(var(--section-padding) / 2) var(--section-padding) var(--section-padding) var(--section-padding);
+  background-color: #fafafa;
+  position: relative;
+  box-sizing: border-box;
+
+  &:nth-child(odd) {
+      background-color: #f0f0f0;
+  }
+}
+
+footer {
+  padding: calc(var(--section-padding) / 2) var(--section-padding);
+}
+
+.up {
+  position: absolute;
+  bottom: calc(var(--section-padding) / 2);
+  right: var(--section-padding);
+}
+
+.viewport-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.circle-container {
+  position: relative;
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+  border-radius: 50%;
+  /* border: 1px solid #ccc; */
+}
+
+.circle {
+  position: absolute;
+  width: var(--circle-element-diameter);
+  height: var(--circle-element-diameter);
+  max-width: var(--circle-element-max-diameter);
+  max-height: var(--circle-element-max-diameter);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 50%;
+  }
+}
+
+.center-element {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+}
+
+.circle-element {
+  font-weight: bold;
+
+  background-color: white;
+  /* box-shadow: 0 0 20px 25px white; */
+  /* background-color: blue;
+  box-shadow: 0 0 30px 30px blue */
+}
+
+.circle-title {
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon {
+  padding: 10px;
+ 
+  i {
+  display: block;
+  width: var(--social-media-icon-size);
+  height: var(--social-media-icon-size);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  &.facebook {
+    background-image: url('assets/facebook.png');
+  }
+  &.gmaps {
+    background-image: url('assets/google-maps.png');
+  }
+ }
+}
+
+h2:first-child {
+  margin-top: 0;
+}
