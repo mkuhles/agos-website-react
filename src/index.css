@@ -1,13 +1,16 @@
 :root {
   --section-padding: 10vmin;
   --circle-diameter: 90vmin;
-  --circle-element-diameter: 20vmin;
+  --circle-element-diameter: 22vmin;
   --circle-element-max-diameter: 400px;
   --social-media-icon-size: 3vmin;
 
-  --background-primary: #f0e1c0;
-  --background-secondary: #e7d8b9;
-  --border-color: #122917;
+  --dark-green: #1a3524;
+  --light-green: #243f2c;
+
+  --background-primary: #ddcca4;
+  --background-secondary: #d4c193;
+  --border-color: var(--dark-green);
 }
 
 body {
@@ -93,15 +96,10 @@ footer {
 .circle-element {
   font-weight: bold;
 
-  /* background-color: white; */
-  /* box-shadow: 0 0 20px 25px white; */
-  /* background-color: blue;
-  box-shadow: 0 0 30px 30px blue */
-
   .circle-link {
     img {
       border-radius: 50%;
-      box-shadow: 0px 0px 10px black;
+      box-shadow: 0px 0px 10px var(--dark-green);
     }
   }
 }
@@ -117,7 +115,7 @@ footer {
 }
 
 .social-icon {
-  padding: 1vmin;
+  padding: 1.5vmin 1vmin;
  
   i {
   display: block;
