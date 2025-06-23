@@ -16,9 +16,9 @@ function App() {
   useCircleAnimation();
 
   const styles = {};
-  if(width && height) {
-    styles.backgroundImage = `url(${"https://picsum.photos/" + width + "/" + height + ")"}`;
-  }
+  // if(width && height) {
+  //   styles.backgroundImage = `url(${"https://picsum.photos/" + width + "/" + height + ")"}`;
+  // }
 
   return (
     <>
@@ -26,7 +26,7 @@ function App() {
       <section className="viewport-one" style={styles}>
         <div id="circle-container" className="circle-container">
           <div className="center-element circle">
-            <a href="#agos">AGOS</a>
+            <a href="#agos"><img src={"../src/assets/agos.png"} alt={"Aikido Gemeinschaft Oder-Spree e.V."} /></a>
           </div>
           {renderDojoCircles()}
         </div>

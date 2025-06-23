@@ -1,9 +1,13 @@
 :root {
   --section-padding: 10vmin;
-  --circle-diameter: 70vmin;
-  --circle-element-diameter: 30vmin;
-  --circle-element-max-diameter: 200px;
-  --social-media-icon-size: 30px
+  --circle-diameter: 90vmin;
+  --circle-element-diameter: 20vmin;
+  --circle-element-max-diameter: 400px;
+  --social-media-icon-size: 3vmin;
+
+  --background-primary: #f0e1c0;
+  --background-secondary: #e7d8b9;
+  --border-color: #122917;
 }
 
 body {
@@ -15,12 +19,16 @@ section {
   min-height: 100vh;
   margin: 0;
   padding: calc(var(--section-padding) / 2) var(--section-padding) var(--section-padding) var(--section-padding);
-  background-color: #fafafa;
+  background-color: var(--background-primary);
   position: relative;
   box-sizing: border-box;
+  border-top: 1px solid var(--border-color);
 
   &:nth-child(odd) {
-      background-color: #f0f0f0;
+      background-color: var(--background-secondary);
+  }
+  &:first-child {
+      border-top: none;
   }
 }
 
@@ -71,7 +79,6 @@ footer {
   img {
       max-width: 100%;
       max-height: 100%;
-      border-radius: 50%;
   }
 }
 
@@ -80,15 +87,23 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: bold;
+  z-index: 100;
 }
 
 .circle-element {
   font-weight: bold;
 
-  background-color: white;
+  /* background-color: white; */
   /* box-shadow: 0 0 20px 25px white; */
   /* background-color: blue;
   box-shadow: 0 0 30px 30px blue */
+
+  .circle-link {
+    img {
+      border-radius: 50%;
+      box-shadow: 0px 0px 10px black;
+    }
+  }
 }
 
 .circle-title {
@@ -102,7 +117,7 @@ footer {
 }
 
 .social-icon {
-  padding: 10px;
+  padding: 1vmin;
  
   i {
   display: block;

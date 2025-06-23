@@ -3,7 +3,7 @@
         "id": "muellrose",
         "name": "Müllrose",
         "description": "Müllrose is a small town in the district of Oder-Spree in Brandenburg, Germany. It is located near the border with Poland and is known for its picturesque landscapes and historical sites.",
-        "logo": "logo-muellrose.jpg",
+        "logo": "logo-muellrose.png",
         "facebook": "https://www.facebook.com/people/Aikido-Dojo-M%C3%BCllrose/100078400001742/#",
         "gmaps": "https://maps.app.goo.gl/5mqpYQAG1LFtVTEA9"
     },
@@ -11,22 +11,24 @@
         "id": "beeskow",
         "name": "Beeskow",
         "description": "Beeskow is a town in the district of Oder-Spree in Brandenburg, Germany. It is known for its medieval architecture and is situated on the banks of the Spree River.",
-        "logo": "logo-beeskow.jpg",
+        "logo": "logo-beeskow.png",
         "facebook": "https://www.facebook.com/aikidogemeinschaft"
     },
     {
         "id": "eisenhuettenstadt",
         "name": "Eisenhüttenstadt",
-        "logo": "logo-eisenhuettenstadt.jpg"
+        "logo": "logo-eisenhuettenstadt.png"
     },
     {
         "id": "libbenichen",
         "name": "Libbenichen",
-        "description": "Libbenichen is a small village in the district of Oder-Spree in Brandenburg, Germany. It is known for its rural charm and scenic surroundings."
+        "description": "Libbenichen is a small village in the district of Oder-Spree in Brandenburg, Germany. It is known for its rural charm and scenic surroundings.",
+        "logo": "logo-libbenichen.png"
     },
     {
         "id": "groeditsch",
-        "name": "Gröditsch",
-        "description": "Gröditsch is a small village in the district of Oder-Spree in Brandenburg, Germany. It is known for its rural charm and scenic surroundings."
+        "name": "Märkische Heide - Gröditsch",
+        "description": "Gröditsch is a small village in the district of Oder-Spree in Brandenburg, Germany. It is known for its rural charm and scenic surroundings.",
+        "logo": "logo-groeditsch.png"
     }
 ]
