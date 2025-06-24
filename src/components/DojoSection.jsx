@@ -2,12 +2,21 @@ import PropTypes from 'prop-types';
 
 export default function DojoSection({dojo}) {
     return (
-        <section id={dojo.id}>
+        <section className="dojo-section" id={dojo.id}>
+            <div>
             <h2>{dojo.name}</h2>
             {dojo.description ? (
                 <p>{dojo.description}</p>
             ) : ( null)}
-            <div className="up"><a href="#top">zurück zum Start</a></div>
+            </div>
+            <div>
+            {dojo.logo ? (
+                <img src={"../src/assets/"+dojo.logo} alt={"Dojo " + dojo.name} />
+            ) : (
+                <div className="placeholder">Logo fehlt</div>
+            )}
+            </div>
+            <div className="up"><a className='btn' href="#top">zurück zum Start</a></div>
         </section>
     )
 }

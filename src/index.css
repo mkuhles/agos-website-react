@@ -1,6 +1,6 @@
 :root {
   --section-padding: 10vmin;
-  --circle-diameter: 90vmin;
+  --circle-diameter: 80vmin;
   --circle-element-diameter: 22vmin;
   --circle-element-max-diameter: 400px;
   --social-media-icon-size: 3vmin;
@@ -16,6 +16,7 @@
 body {
   margin: 0;
   font-family: sans-serif;
+  font-size: 1.5vmin;;
 }
 
 section {
@@ -39,6 +40,19 @@ footer {
   padding: calc(var(--section-padding) / 2) var(--section-padding);
 }
 
+a.btn {
+  text-decoration: none;
+  border: 1px solid var(--dark-green);
+  background-color: var(--dark-green);
+  color: var(--background-primary);
+  border-radius: 0.5vmin;
+  padding: 0.5vmin 1vmin;
+}
+a.btn:hover {
+  background-color: var(--background-primary);
+  color: var(--dark-green);
+}
+
 .up {
   position: absolute;
   bottom: calc(var(--section-padding) / 2);
@@ -46,13 +60,28 @@ footer {
 }
 
 .viewport-one {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
+  background-image: url('../src/assets/stones.png');
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: 3.5vmin;
+  margin-top: 0;
+  margin-bottom: 5vmin;
+  padding: 0;
+  color: var(--dark-green);
+  text-shadow: 0 0 10px var(--background-primary);
 }
 
 .circle-container {
@@ -95,13 +124,6 @@ footer {
 
 .circle-element {
   font-weight: bold;
-
-  .circle-link {
-    img {
-      border-radius: 50%;
-      box-shadow: 0px 0px 10px var(--dark-green);
-    }
-  }
 }
 
 .circle-title {
@@ -112,6 +134,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  margin-bottom: 1vmin;
 }
 
 .social-icon {
@@ -137,3 +161,75 @@ footer {
 h2:first-child {
   margin-top: 0;
 }
+
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: var(--circle-element-diameter);
+  height: var(--circle-element-diameter);
+  border-radius: 50%;
+    
+  /* border: 1px solid #f1f1f1; */
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  
+  border-radius: 50%;
+  background-color: var(--light-green);
+  background-position: center;
+  background-image: url('../src/assets/stones.png');
+  background-size: 60%;
+  box-shadow: 0px 0px 10px var(--dark-green);
+  
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+}
+
+/* Style the back side */
+.flip-card-back {
+  color: var(--background-primary);
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a.btn {
+    border-color: var(--background-primary);
+    background-color: var(--background-primary);
+    color: var(--dark-green);
+  }
+  a.btn:hover {
+    background-color: var(--dark-green);
+    color: var(--background-primary);
+  }
+}
+
+.flip-card-back-inner {
+  padding: 4vmin;
+}
+

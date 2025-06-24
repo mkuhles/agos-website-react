@@ -24,11 +24,18 @@ function App() {
     <>
       <div id="top"></div>
       <section className="viewport-one" style={styles}>
-        <div id="circle-container" className="circle-container">
-          <div className="center-element circle">
-            <a href="#agos"><img src={"../src/assets/agos.png"} alt={"Aikido-Gemeinschaft Oder-Spree e.V."} /></a>
+        <div>
+          <div className="header">
+            <h1>Aikido-Gemeinschaft Oder-Spree e.V.</h1>
           </div>
-          {renderDojoCircles()}
+          <div className="flex-center">
+            <div id="circle-container" className="circle-container">
+              <div className="center-element circle">
+                <a href="#agos"><img src={"../src/assets/agos.png"} alt={"Aikido-Gemeinschaft Oder-Spree e.V."} /></a>
+              </div>
+              {renderDojoCircles()}
+            </div>
+          </div>
         </div>
       </section>
       {renderDojoSections()}
