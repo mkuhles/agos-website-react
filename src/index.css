@@ -203,20 +203,17 @@ h2:first-child {
   background-image: url('../src/assets/stones.png');
   background-size: 60%;
   box-shadow: 0px 0px 10px var(--dark-green);
+  color: var(--background-primary);
   
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
 }
 
 /* Style the back side */
 .flip-card-back {
-  color: var(--background-primary);
   transform: rotateY(180deg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   a.btn {
     border-color: var(--background-primary);
