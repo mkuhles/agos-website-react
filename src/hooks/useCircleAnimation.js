@@ -17,11 +17,9 @@ export default function useCircleAnimation() {
 
   const [width, height] = windowsize;
   const vmin = width < height ? width : height;
-  console.log('vmin', vmin, 'width', width, 'height', height);
   const maxRadius = vmin * 0.3; // 50px padding
   const radiusStep = maxRadius / STEP_NUMBER;
-  console.log('maxRadius', maxRadius, 'radiusStep', radiusStep);
-
+  
   useEffect(() => {
     const handleResize = () => {
       setWindowSize([window.innerWidth, window.innerHeight]);

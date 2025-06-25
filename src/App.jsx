@@ -5,6 +5,9 @@ import Footer from './components/Footer';
 import useWindowSize from './hooks/useWindowSize';
 import useCircleAnimation from './hooks/useCircleAnimation';
 import useValidateDojoData from './hooks/useValidateDojoData';
+import SEO from './components/SEO';
+import './scss/styles.scss';
+
 
 function App() {
   const { isValid, message } = useValidateDojoData(dojos);
@@ -39,7 +42,9 @@ function App() {
         </div>
       </section>
       {renderDojoSections()}
+      <SEO />
       <Footer />
+      <div className="up"><a className='btn' href="#top" title="Zurück zum Start">hoch</a></div>
     </>
   );
 
