@@ -1,4 +1,5 @@
-import dojos from './data/dojos.json';
+// import dojos from './data/dojos.json';
+
 import DojoCircle from './components/DojoCircle';
 import DojoSection from './components/DojoSection';
 import Footer from './components/Footer';
@@ -7,13 +8,32 @@ import useCircleAnimation from './hooks/useCircleAnimation';
 import useValidateDojoData from './hooks/useValidateDojoData';
 import SEO from './components/SEO';
 import './scss/styles.scss';
+import { useEffect, useState } from 'react';
 
 
 function App() {
-  const { isValid, message } = useValidateDojoData(dojos);
-  if (!isValid) {
-    return <div>{message}</div>;
-  }
+  const [dojos, setDojos] = useState([]);
+  // const { isValid, message } = useValidateDojoData(dojos);
+  // if (!isValid) {
+  //   return <div>{message}</div>;
+  // }
+
+  useEffect(() => {
+    async function fetchDojos() {
+      try {
+        const response = await fetch('https://my-drupal.ddev.site/agosapi/dojos',{mode: 'cors'});
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setDojos(data);
+      } catch (error) {
+        console.error('Error fetching dojo data:', error);
+        setDojos([]); // Set to empty array on error
+      }
+    }
+    fetchDojos();
+  }, []);
 
   const [width, height] = useWindowSize();
   useCircleAnimation();

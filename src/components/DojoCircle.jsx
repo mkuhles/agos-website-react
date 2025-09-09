@@ -7,7 +7,7 @@ function DojoCircle({ dojo }) {
         <div className='flip-card-inner'>
             <div className="flip-card-front">
                 {dojo.logo ? (
-                    <img src={"../src/assets/"+dojo.logo} alt={"Dojo " + dojo.name} />
+                    <img src={dojo.logo} alt={"Dojo " + dojo.name} />
                 ) : (
                     <div className="circle-title">{dojo.name}</div>
                 )}
