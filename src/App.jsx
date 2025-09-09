@@ -10,7 +10,6 @@ import SEO from './components/SEO';
 import './scss/styles.scss';
 import { useEffect, useState } from 'react';
 
-
 function App() {
   const [dojos, setDojos] = useState([]);
   // const { isValid, message } = useValidateDojoData(dojos);
@@ -21,7 +20,8 @@ function App() {
   useEffect(() => {
     async function fetchDojos() {
       try {
-        const response = await fetch('https://my-drupal.ddev.site/agosapi/dojos',{mode: 'cors'});
+        const dojosurl = import.meta.env.VITE_DATA_API_URL + '/dojos';
+        const response = await fetch(dojosurl,{mode: 'cors'});
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
