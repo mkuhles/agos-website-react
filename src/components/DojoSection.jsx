@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Section from './Section';
+import Parser from 'html-react-parser';
 
 export default function DojoSection({dojo}) {
     return (
@@ -7,13 +8,13 @@ export default function DojoSection({dojo}) {
             <h2 className="section-title">{dojo.name}</h2>
             <div className="dojo-logo">
             {dojo.logo ? (
-                <img src={"../src/assets/"+dojo.logo} alt={"Dojo " + dojo.name} />
+                <img src={dojo.logo} alt={"Dojo " + dojo.name} />
             ) : (
                 <div className="placeholder">Logo fehlt</div>
             )}
             </div>
             {dojo.description ? (
-                <p>{dojo.description}</p>
+                <>{Parser(dojo.description)}</>
             ) : ( null)}
         </Section>
     )

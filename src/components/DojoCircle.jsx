@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import SocialIcons from './SocialIcons';
 
 function DojoCircle({ dojo }) {
+  console.log("Rendering DojoCircle for:", dojo);
   return (
     <div className="circle-element circle flip-card">
         <div className='flip-card-inner'>
