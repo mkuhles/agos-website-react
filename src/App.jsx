@@ -3,7 +3,6 @@ import DojoSection from './components/DojoSection';
 import Footer from './components/Footer';
 import SEO from './components/SEO';
 import useCircleAnimation from './hooks/useCircleAnimation';
-import useValidateDojoData from './hooks/useValidateDojoData';
 import './scss/styles.scss';
 import { useEffect, useState } from 'react';
 import useWindowSize from './hooks/useWindowSize';
@@ -11,10 +10,6 @@ import useWindowSize from './hooks/useWindowSize';
 export function App() {
   const [dojos, setDojos] = useState([]);
   const [siteData, setSiteData] = useState({ title: "Aikido-Gemeinschaft Oder-Spree e.V." });
-  // const { isValid, message } = useValidateDojoData(dojos);
-  // if (!isValid) {
-  //   return <div>{message}</div>;
-  // }
 
   useEffect(() => {
     
@@ -54,9 +49,6 @@ export function App() {
   useCircleAnimation();
 
   const styles = {};
-  // if(width && height) {
-  //   styles.backgroundImage = `url(${"https://picsum.photos/" + width + "/" + height + ")"}`;
-  // }
   return (
     <>
       <div id="top"></div>
@@ -68,7 +60,7 @@ export function App() {
           <div className="flex-center">
             <div id="circle-container" className="circle-container">
               <div className="center-element circle">
-                <a href="#agos"><img src={"../src/assets/agos.png"} alt={"Aikido-Gemeinschaft Oder-Spree e.V."} /></a>
+                <a href="#agos"><img src={siteData.logo} alt={siteData.title} /></a>
               </div>
               {renderDojoCircles()}
             </div>
@@ -76,7 +68,7 @@ export function App() {
         </div>
       </section>
       {renderDojoSections()}
-      <SEO />
+      <SEO data={siteData} />
       <Footer />
       <div className="up"><a className='btn' href="#top" title="Zurück zum Start">hoch</a></div>
     </>
